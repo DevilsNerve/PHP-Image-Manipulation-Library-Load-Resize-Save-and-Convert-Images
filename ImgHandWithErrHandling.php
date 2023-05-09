@@ -108,21 +108,16 @@ class ImageHandler {
         return $height;
     }
 
-
-    function resize($width, $height) {
-        $newImage = imagecreatetruecolor($width, $height);
-        if ($newImage === false) {
-            throw new Exception('Image resizing failed');
-        }
-        if (!imagecopyresampled($newImage, $this->image, 0, 0, 0, 0, $width, $height, $this->getWidth(), $this->getHeight())) {
-            throw new Exception('Image copy and resize failed');
-        }
-        $this->image = $newImage;
-    }
-
     function convertToWebP($filename) {
-        if (!imagewebp($this->image, $filename)) {
-            throw new Exception('Image conversion to WebP failed');
+        try {
+            if (!imagewebp($this->image, $filename)) {
+                throw new Exception('Failed to convert image to WebP');
+            }
+        } catch (Exception $e) {
+            // Handle the exception as desired, for example:
+            error_log('Error converting image to WebP: ' . $e->getMessage());
+            // You can also re-throw the exception to let the calling code handle it:
+            // throw $e;
         }
     }
 
