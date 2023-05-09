@@ -60,7 +60,7 @@ $image->convertToWebP('output.webp');
 
 ### Handling Errors
 
-The `ImageHandler` class includes error handling to throw exceptions if an invalid parameter is passed or if an operation fails. You can catch these exceptions using a `try`/`catch` block:
+The `ImageHandler` class in ImgHandWithErrHandling.php includes error handling to throw exceptions if an invalid parameter is passed or if an operation fails. You can catch these exceptions using a `try`/`catch` block:
 
 ```php
 try {
