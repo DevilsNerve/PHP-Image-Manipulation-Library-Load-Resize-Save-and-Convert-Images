@@ -1,3 +1,4 @@
+<?php
 class ImageHandler
 {
     private $image;
