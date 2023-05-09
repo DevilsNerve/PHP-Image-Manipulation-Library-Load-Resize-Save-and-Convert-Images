@@ -58,6 +58,17 @@ $image->scale(50);  // scales the image to 50%
 $image->convertToWebP('output.webp');
 ```
 
+### Handling Errors
+
+The `ImageHandler` class includes error handling to throw exceptions if an invalid parameter is passed or if an operation fails. You can catch these exceptions using a `try`/`catch` block:
+
+```php
+try {
+    // Perform an image operation
+} catch (Exception $e) {
+    // Handle the exception
+}
+
 ## Installation
 
 No installation is necessary, just include the `ImageHandler.php` file in your PHP script.
