@@ -68,6 +68,7 @@ try {
 } catch (Exception $e) {
     // Handle the exception
 }
+```
 
 ## Installation
 
